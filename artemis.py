@@ -29,7 +29,7 @@ with open('ips.txt','r') as f1:
         elif port == '80':
             line = 'http://' + line
             print line
-        elif port == '808':
+        elif port == '8080':
             line = 'http://' + line
             print line
         else:
