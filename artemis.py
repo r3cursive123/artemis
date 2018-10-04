@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 """
 Requirements:
 1. pip2 install selenium
@@ -12,10 +12,18 @@ Purpose: read a local file with ip:port listing and take screenshots - saves to 
 """
 # Initialize chrome driver
 chrome_driver = './chromedriver'
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--window-size=1920x1080")
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+options = webdriver.ChromeOptions()
+options.binary_location = '/usr/bin/google-chrome'
+options.add_argument("--headless")
+options.add_argument("--window-size=1920x1080")
+options.add_argument("--no-sandbox")
+options.add_argument("--allow-running-insecure-content")
+options.add_argument("--ignore-certificate-errors")
+
+capabilities = DesiredCapabilities.CHROME.copy()
+capabilities['acceptSslCerts'] = True
+capabilities['acceptInsecureCerts'] = True
+driver = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities, executable_path=chrome_driver)
 proto = ""
 
 # Loop through ip file and visit pages
@@ -40,7 +48,7 @@ with open('ips.txt','r') as f1:
             driver.get(line)
             out_file = (line.strip().replace(':','%3A').replace('/','%2F') + '.png')
             driver.get_screenshot_as_file(str(out_file))
-            print "Screenshot of " + proto + line + " created successfully!"
+            print "Screenshot of " + line + " created successfully!"
         except Exception as e:
             print "We got a problem..."
             print (
