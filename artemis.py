@@ -6,7 +6,8 @@ Requirements:
 1. pip2 install selenium
 2. download chrome driver and place in same directory as this script
     https://chromedriver.storage.googleapis.com/index.html?path=2.40/
-    
+3. Google Chrome must be installed
+
 Purpose: read a local file with ip:port listing and take screenshots - saves to local directory
 
 """
