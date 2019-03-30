@@ -16,6 +16,7 @@ It just makes identifying web servers easier during a pentest.
 Reads from a text file named 'ips.txt' that includes targetip:port - one per entry per line. Loops through each line and based on port number will assign http:// or https:// before making the request to the website. Uses selenium and chrome webdriver to make a .png screenshot of the webpage and saves it to the local directory. 
 
 Example ips.txt contents:
+
 127.0.0.1:80
 
 123.0.0.1:8080
