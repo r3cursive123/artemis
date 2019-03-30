@@ -1,10 +1,12 @@
 # artemis
 
-## Requirements:
+## Requirements/Steps:
 1. pip2 install selenium
-2. download chrome driver and place in same directory as this script
-    https://chromedriver.storage.googleapis.com/index.html?path=2.40/
-3. Make sure Google Chrome Web Browser is installed
+2. Make sure Google Chrome Web Browser is installed
+3. git clone https://github.com/r3cursive123/artemis.git
+4. cd artemis
+5. chmod +x chromedriver
+6. Good to go
 
 
 ## Purpose: 
