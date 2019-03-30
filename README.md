@@ -17,7 +17,9 @@ Reads from a text file named 'ips.txt' that includes targetip:port - one per ent
 
 Example ips.txt contents:
 127.0.0.1:80
+
 123.0.0.1:8080
+
 456.0.0.1:443
 
 Note: Self-Signed Certificates are accepted.
