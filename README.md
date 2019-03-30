@@ -10,9 +10,14 @@
 
 
 ## Purpose: 
-Read a local file with ip:port listing and take screenshots - saves to local directory.
+It just makes identifying web servers easier during a pentest.
 
 ## Description:
-Reads from a text file named 'ips.txt' that includes ip:port - one per entry per line. Loops through each line and based on port number will assign http:// or https:// before making the request to the website. Uses selenium and chrome webdriver to make a .png screenshot of the webpage and saves it to the local directory. 
+Reads from a text file named 'ips.txt' that includes targetip:port - one per entry per line. Loops through each line and based on port number will assign http:// or https:// before making the request to the website. Uses selenium and chrome webdriver to make a .png screenshot of the webpage and saves it to the local directory. 
+
+Example ips.txt contents:
+127.0.0.1:80
+123.0.0.1:8080
+456.0.0.1:443
 
 Note: Self-Signed Certificates are accepted.
